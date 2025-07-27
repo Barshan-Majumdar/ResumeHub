@@ -111,16 +111,16 @@ const ResumeBuilder = () => {
 
   // Template style mapping
   const templateStyles: Record<string, { card: string; header: string; section: string; text: string }> = {
-    '1': { card: 'bg-white border border-gray-200', header: 'text-blue-700', section: 'text-blue-600', text: 'text-gray-900' },
-    '2': { card: 'bg-gray-50 border border-gray-300', header: 'text-green-700', section: 'text-green-600', text: 'text-gray-800' },
-    '3': { card: 'bg-gradient-to-br from-purple-500 to-purple-700', header: 'text-white', section: 'text-purple-200', text: 'text-white' },
-    '4': { card: 'bg-gradient-to-br from-gray-600 to-gray-800', header: 'text-yellow-200', section: 'text-yellow-100', text: 'text-white' },
-    '5': { card: 'bg-gradient-to-br from-cyan-500 to-cyan-700', header: 'text-white', section: 'text-cyan-200', text: 'text-white' },
-    '6': { card: 'bg-gradient-to-br from-indigo-500 to-indigo-700', header: 'text-white', section: 'text-indigo-200', text: 'text-white' },
-    '7': { card: 'bg-gradient-to-br from-orange-500 to-orange-700', header: 'text-white', section: 'text-orange-200', text: 'text-white' },
-    '8': { card: 'bg-gradient-to-br from-teal-500 to-teal-700', header: 'text-white', section: 'text-teal-200', text: 'text-white' },
-    '9': { card: 'bg-gradient-to-br from-emerald-500 to-emerald-700', header: 'text-white', section: 'text-emerald-200', text: 'text-white' },
-    '10': { card: 'bg-gradient-to-br from-pink-500 to-pink-700', header: 'text-white', section: 'text-pink-200', text: 'text-white' },
+    '1': { card: 'bg-white border border-gray-200', header: 'text-blue-900', section: 'text-blue-800', text: 'text-gray-900' },
+    '2': { card: 'bg-gray-50 border border-gray-300', header: 'text-green-900', section: 'text-green-800', text: 'text-gray-900' },
+    '3': { card: 'bg-gradient-to-br from-purple-500 to-purple-700', header: 'text-purple-700', section: 'text-purple-600', text: 'text-purple-800' },
+    '4': { card: 'bg-gradient-to-br from-gray-600 to-gray-800', header: 'text-gray-700', section: 'text-gray-600', text: 'text-gray-700' },
+    '5': { card: 'bg-gradient-to-br from-cyan-500 to-cyan-700', header: 'text-cyan-700', section: 'text-cyan-600', text: 'text-cyan-800' },
+    '6': { card: 'bg-gradient-to-br from-indigo-500 to-indigo-700', header: 'text-indigo-700', section: 'text-indigo-600', text: 'text-indigo-800' },
+    '7': { card: 'bg-gradient-to-br from-orange-500 to-orange-700', header: 'text-orange-700', section: 'text-orange-600', text: 'text-orange-800' },
+    '8': { card: 'bg-gradient-to-br from-teal-500 to-teal-700', header: 'text-teal-700', section: 'text-teal-600', text: 'text-teal-800' },
+    '9': { card: 'bg-gradient-to-br from-emerald-500 to-emerald-700', header: 'text-emerald-700', section: 'text-emerald-600', text: 'text-emerald-800' },
+    '10': { card: 'bg-gradient-to-br from-pink-500 to-pink-700', header: 'text-pink-700', section: 'text-pink-600', text: 'text-pink-800' },
   };
   const selectedStyle = templateStyles[templateId] || templateStyles['1'];
 

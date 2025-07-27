@@ -13,36 +13,7 @@ import { useState, useRef, useEffect } from "react";
 
 // ...existing code...
 
-const ResumeBuilder = () => {
-  // ...existing code...
-
-  // Inject PDF clean styles once on mount
-  useEffect(() => {
-    if (typeof window !== 'undefined' && !document.head.querySelector('style[data-pdf-clean]')) {
-      const style = document.createElement('style');
-      style.setAttribute('data-pdf-clean', 'true');
-      style.innerHTML = `
-        .pdf-clean-bg, .pdf-clean-bg * {
-          background: #fff !important;
-          box-shadow: none !important;
-          color-adjust: exact !important;
-          -webkit-print-color-adjust: exact !important;
-          print-color-adjust: exact !important;
-        }
-        .pdf-preview-wrapper {
-          max-width: 700px;
-          margin: 0 auto;
-          padding: 32px 16px;
-        }
-        .pdf-card-export {
-          box-shadow: none !important;
-          background: #fff !important;
-          border: 1px solid #e5e7eb !important;
-        }
-      `;
-      document.head.appendChild(style);
-    }
-  }, []);
+// Remove this duplicate/incomplete ResumeBuilder declaration and its block (including the useEffect above).
 
 interface Experience {
   id: number;

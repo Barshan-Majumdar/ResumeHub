@@ -5,9 +5,11 @@ import { FeatureCard } from "@/components/FeatureCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Star, Palette, Settings, ArrowRight, FileText, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Index = () => {
   const navigate = useNavigate();
+  const [showAbout, setShowAbout] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-hero relative overflow-hidden">
@@ -42,7 +44,11 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="flex items-center space-x-4"
           >
-            <Button variant="ghost" className="text-foreground hover:text-primary">
+            <Button 
+              variant="ghost" 
+              className="text-foreground hover:text-primary"
+              onClick={() => setShowAbout(true)}
+            >
               About
             </Button>
             <Button 
@@ -56,6 +62,58 @@ const Index = () => {
           </motion.div>
         </nav>
       </header>
+
+      {showAbout && (
+        <div 
+          className="fixed inset-0 flex items-center justify-center bg-gradient-hero bg-opacity-90 z-50"
+          onClick={() => setShowAbout(false)}
+        >
+          <div 
+            className="bg-gradient-to-br from-purple-400 to-purple-600 p-10 rounded-3xl max-w-lg w-full relative flex flex-col items-center text-center"
+            onClick={(e) => e.stopPropagation()}
+            style={{ boxShadow: '0 0 25px 8px rgba(139, 92, 246, 0.8)' }} // stronger purple glow
+          >
+            <div className="mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-100 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-4">About ResumeHub</h3>
+            <p className="text-purple-200 mb-8 max-w-md whitespace-pre-line text-left">
+              ResumeHub is a lightweight and intuitive Mini Resume Generator built for students, job seekers, and professionals who want to quickly create a polished resume without the hassle of formatting or design.
+
+              With customizable templates and color themes, ResumeHub offers a minimal yet impactful resume-building experience — all from your browser.
+
+              Whether you're preparing for your next internship, job hunt, or just want a good-looking resume in minutes, ResumeHub helps you generate one that's clean, modern, and ATS-friendly.
+
+              ✨ Key Features:
+              🎨 Template-based design with multiple color options
+
+              ⚡ Real-time preview of your resume layout
+
+              📝 Editable input fields for name, education, experience & more
+
+              💾 Easily export as PDF
+            </p>
+            <button 
+              className="bg-purple-700 hover:bg-purple-800 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition duration-300 flex items-center space-x-2"
+              onClick={() => setShowAbout(false)}
+            >
+              <span>Start Building Now</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button 
+              className="absolute top-4 right-4 text-purple-100 hover:text-white font-bold text-2xl"
+              onClick={() => setShowAbout(false)}
+              aria-label="Close About"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <main className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-6 text-center">
